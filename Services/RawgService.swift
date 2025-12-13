@@ -12,7 +12,7 @@ class RawgService {
     static let shared = RawgService()
     private init() {}
 
-    private let apiKey = ""
+    private let apiKey = "5616cbd1b2e147b49763301d930f4d22"
     private let baseURL = "https://api.rawg.io/api"
 
     func getPopularGames(completion: @escaping ([Game]) -> Void) {

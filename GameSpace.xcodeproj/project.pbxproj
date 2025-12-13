@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B5710DAB2EEDDA6D008E8A4C /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5710DAA2EEDDA6D008E8A4C /* LoginViewModel.swift */; };
+		B5710DAD2EEDDAA2008E8A4C /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5710DAC2EEDDAA2008E8A4C /* HomeViewModel.swift */; };
+		B5710DB02EEDDDAC008E8A4C /* GameCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5710DAF2EEDDDAC008E8A4C /* GameCardCell.swift */; };
 		B5E1FF192EE1E512007ABE73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E1FF182EE1E512007ABE73 /* AppDelegate.swift */; };
 		B5E1FF1B2EE1E512007ABE73 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E1FF1A2EE1E512007ABE73 /* SceneDelegate.swift */; };
 		B5E1FF1D2EE1E512007ABE73 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E1FF1C2EE1E512007ABE73 /* HomeViewController.swift */; };
@@ -24,6 +27,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B5710DAA2EEDDA6D008E8A4C /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		B5710DAC2EEDDAA2008E8A4C /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		B5710DAF2EEDDDAC008E8A4C /* GameCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCardCell.swift; sourceTree = "<group>"; };
 		B5E1FF152EE1E512007ABE73 /* GameSpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameSpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5E1FF182EE1E512007ABE73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5E1FF1A2EE1E512007ABE73 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,9 +59,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B5710DA62EEDD6F0008E8A4C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				B5710DAA2EEDDA6D008E8A4C /* LoginViewModel.swift */,
+				B5710DAC2EEDDAA2008E8A4C /* HomeViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		B5710DA82EEDD729008E8A4C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B5E1FF3C2EE1EBE7007ABE73 /* Register.storyboard */,
+				B5E1FF3A2EE1EB42007ABE73 /* Login.storyboard */,
+				B5710DA92EEDD735008E8A4C /* Controller */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B5710DA92EEDD735008E8A4C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B5710DAE2EEDDD85008E8A4C /* Cells */,
+				B5E1FF382EE1E79D007ABE73 /* RegisterViewController.swift */,
+				B5E1FF362EE1E78A007ABE73 /* LoginViewController.swift */,
+				B5E1FF1C2EE1E512007ABE73 /* HomeViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B5710DAE2EEDDD85008E8A4C /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B5710DAF2EEDDDAC008E8A4C /* GameCardCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		B5E1FF0C2EE1E512007ABE73 = {
 			isa = PBXGroup;
 			children = (
+				B5710DA82EEDD729008E8A4C /* View */,
+				B5710DA62EEDD6F0008E8A4C /* ViewModels */,
 				B5E1FF2D2EE1E585007ABE73 /* Services */,
 				B5E1FF2C2EE1E571007ABE73 /* Models */,
 				B5E1FF172EE1E512007ABE73 /* GameSpace */,
@@ -76,15 +122,10 @@
 			children = (
 				B5E1FF182EE1E512007ABE73 /* AppDelegate.swift */,
 				B5E1FF1A2EE1E512007ABE73 /* SceneDelegate.swift */,
-				B5E1FF1C2EE1E512007ABE73 /* HomeViewController.swift */,
 				B5E1FF1E2EE1E512007ABE73 /* Main.storyboard */,
 				B5E1FF212EE1E514007ABE73 /* Assets.xcassets */,
 				B5E1FF232EE1E514007ABE73 /* LaunchScreen.storyboard */,
 				B5E1FF262EE1E514007ABE73 /* Info.plist */,
-				B5E1FF362EE1E78A007ABE73 /* LoginViewController.swift */,
-				B5E1FF382EE1E79D007ABE73 /* RegisterViewController.swift */,
-				B5E1FF3A2EE1EB42007ABE73 /* Login.storyboard */,
-				B5E1FF3C2EE1EBE7007ABE73 /* Register.storyboard */,
 			);
 			path = GameSpace;
 			sourceTree = "<group>";
@@ -181,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5E1FF392EE1E79D007ABE73 /* RegisterViewController.swift in Sources */,
+				B5710DAD2EEDDAA2008E8A4C /* HomeViewModel.swift in Sources */,
 				B5E1FF1D2EE1E512007ABE73 /* HomeViewController.swift in Sources */,
 				B5E1FF332EE1E64E007ABE73 /* Game.swift in Sources */,
 				B5E1FF312EE1E632007ABE73 /* RawgService.swift in Sources */,
@@ -188,6 +230,8 @@
 				B5E1FF372EE1E78A007ABE73 /* LoginViewController.swift in Sources */,
 				B5E1FF1B2EE1E512007ABE73 /* SceneDelegate.swift in Sources */,
 				B5E1FF2F2EE1E5DB007ABE73 /* AuthService.swift in Sources */,
+				B5710DB02EEDDDAC008E8A4C /* GameCardCell.swift in Sources */,
+				B5710DAB2EEDDA6D008E8A4C /* LoginViewModel.swift in Sources */,
 				B5E1FF352EE1E681007ABE73 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
