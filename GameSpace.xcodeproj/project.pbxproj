@@ -10,6 +10,13 @@
 		B5710DAB2EEDDA6D008E8A4C /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5710DAA2EEDDA6D008E8A4C /* LoginViewModel.swift */; };
 		B5710DAD2EEDDAA2008E8A4C /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5710DAC2EEDDAA2008E8A4C /* HomeViewModel.swift */; };
 		B5710DB02EEDDDAC008E8A4C /* GameCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5710DAF2EEDDDAC008E8A4C /* GameCardCell.swift */; };
+		B5C8A7FA2EF08A7800835FEB /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C8A7F92EF08A7800835FEB /* SearchViewModel.swift */; };
+		B5C8A7FC2EF08AAA00835FEB /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C8A7FB2EF08AAA00835FEB /* SearchViewController.swift */; };
+		B5C8A7FE2EF08FFC00835FEB /* PlatformViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C8A7FD2EF08FFC00835FEB /* PlatformViewController.swift */; };
+		B5C8A8002EF0901400835FEB /* PlatformViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C8A7FF2EF0901400835FEB /* PlatformViewModel.swift */; };
+		B5C8A8022EF0907900835FEB /* GameGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C8A8012EF0907900835FEB /* GameGridCell.swift */; };
+		B5C8A8072EF0934600835FEB /* platformStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C8A8062EF0934600835FEB /* platformStack.swift */; };
+		B5C8A8092EF0941200835FEB /* tableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C8A8082EF0941200835FEB /* tableView.swift */; };
 		B5E1FF192EE1E512007ABE73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E1FF182EE1E512007ABE73 /* AppDelegate.swift */; };
 		B5E1FF1B2EE1E512007ABE73 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E1FF1A2EE1E512007ABE73 /* SceneDelegate.swift */; };
 		B5E1FF1D2EE1E512007ABE73 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E1FF1C2EE1E512007ABE73 /* HomeViewController.swift */; };
@@ -30,6 +37,13 @@
 		B5710DAA2EEDDA6D008E8A4C /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		B5710DAC2EEDDAA2008E8A4C /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		B5710DAF2EEDDDAC008E8A4C /* GameCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCardCell.swift; sourceTree = "<group>"; };
+		B5C8A7F92EF08A7800835FEB /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		B5C8A7FB2EF08AAA00835FEB /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		B5C8A7FD2EF08FFC00835FEB /* PlatformViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformViewController.swift; sourceTree = "<group>"; };
+		B5C8A7FF2EF0901400835FEB /* PlatformViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformViewModel.swift; sourceTree = "<group>"; };
+		B5C8A8012EF0907900835FEB /* GameGridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameGridCell.swift; sourceTree = "<group>"; };
+		B5C8A8062EF0934600835FEB /* platformStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = platformStack.swift; sourceTree = "<group>"; };
+		B5C8A8082EF0941200835FEB /* tableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tableView.swift; sourceTree = "<group>"; };
 		B5E1FF152EE1E512007ABE73 /* GameSpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameSpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5E1FF182EE1E512007ABE73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5E1FF1A2EE1E512007ABE73 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +78,8 @@
 			children = (
 				B5710DAA2EEDDA6D008E8A4C /* LoginViewModel.swift */,
 				B5710DAC2EEDDAA2008E8A4C /* HomeViewModel.swift */,
+				B5C8A7F92EF08A7800835FEB /* SearchViewModel.swift */,
+				B5C8A7FF2EF0901400835FEB /* PlatformViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -71,6 +87,7 @@
 		B5710DA82EEDD729008E8A4C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B5C8A8032EF0932200835FEB /* mainStack */,
 				B5E1FF3C2EE1EBE7007ABE73 /* Register.storyboard */,
 				B5E1FF3A2EE1EB42007ABE73 /* Login.storyboard */,
 				B5710DA92EEDD735008E8A4C /* Controller */,
@@ -85,6 +102,8 @@
 				B5E1FF382EE1E79D007ABE73 /* RegisterViewController.swift */,
 				B5E1FF362EE1E78A007ABE73 /* LoginViewController.swift */,
 				B5E1FF1C2EE1E512007ABE73 /* HomeViewController.swift */,
+				B5C8A7FB2EF08AAA00835FEB /* SearchViewController.swift */,
+				B5C8A7FD2EF08FFC00835FEB /* PlatformViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -93,8 +112,18 @@
 			isa = PBXGroup;
 			children = (
 				B5710DAF2EEDDDAC008E8A4C /* GameCardCell.swift */,
+				B5C8A8012EF0907900835FEB /* GameGridCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		B5C8A8032EF0932200835FEB /* mainStack */ = {
+			isa = PBXGroup;
+			children = (
+				B5C8A8062EF0934600835FEB /* platformStack.swift */,
+				B5C8A8082EF0941200835FEB /* tableView.swift */,
+			);
+			path = mainStack;
 			sourceTree = "<group>";
 		};
 		B5E1FF0C2EE1E512007ABE73 = {
@@ -224,15 +253,22 @@
 				B5E1FF392EE1E79D007ABE73 /* RegisterViewController.swift in Sources */,
 				B5710DAD2EEDDAA2008E8A4C /* HomeViewModel.swift in Sources */,
 				B5E1FF1D2EE1E512007ABE73 /* HomeViewController.swift in Sources */,
+				B5C8A8002EF0901400835FEB /* PlatformViewModel.swift in Sources */,
 				B5E1FF332EE1E64E007ABE73 /* Game.swift in Sources */,
 				B5E1FF312EE1E632007ABE73 /* RawgService.swift in Sources */,
+				B5C8A7FA2EF08A7800835FEB /* SearchViewModel.swift in Sources */,
 				B5E1FF192EE1E512007ABE73 /* AppDelegate.swift in Sources */,
 				B5E1FF372EE1E78A007ABE73 /* LoginViewController.swift in Sources */,
+				B5C8A7FC2EF08AAA00835FEB /* SearchViewController.swift in Sources */,
 				B5E1FF1B2EE1E512007ABE73 /* SceneDelegate.swift in Sources */,
 				B5E1FF2F2EE1E5DB007ABE73 /* AuthService.swift in Sources */,
+				B5C8A8022EF0907900835FEB /* GameGridCell.swift in Sources */,
 				B5710DB02EEDDDAC008E8A4C /* GameCardCell.swift in Sources */,
+				B5C8A8092EF0941200835FEB /* tableView.swift in Sources */,
 				B5710DAB2EEDDA6D008E8A4C /* LoginViewModel.swift in Sources */,
+				B5C8A7FE2EF08FFC00835FEB /* PlatformViewController.swift in Sources */,
 				B5E1FF352EE1E681007ABE73 /* User.swift in Sources */,
+				B5C8A8072EF0934600835FEB /* platformStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

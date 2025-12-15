@@ -47,11 +47,20 @@ import UIKit
             logo.frame = CGRect(x: 0, y: 0, width: 36, height: 36)
             navigationItem.leftBarButtonItem = UIBarButtonItem(customView: logo)
             
-            let searchView = UIView()
-            searchView.backgroundColor = .systemGray6
-            searchView.layer.cornerRadius = 10
-            searchView.frame = CGRect(x: 0, y: 0, width: 200, height: 36)
-            navigationItem.rightBarButtonItem = UIBarButtonItem(customView: searchView)
+           
+            let searchButton = UIButton(type: .system)
+                searchButton.setTitle("Buscar juegos", for: .normal)
+                searchButton.backgroundColor = .systemGray6
+                searchButton.layer.cornerRadius = 10
+                searchButton.frame = CGRect(x: 0, y: 0, width: 200, height: 36)
+                searchButton.addTarget(self, action: #selector(openSearch), for: .touchUpInside)
+
+                navigationItem.rightBarButtonItem = UIBarButtonItem(customView: searchButton)
+        }
+        
+        @objc private func openSearch() {
+            let searchVC = SearchViewController()
+            navigationController?.pushViewController(searchVC, animated: true)
         }
         
         private func setupLayout() {
