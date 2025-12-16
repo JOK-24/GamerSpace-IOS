@@ -7,8 +7,6 @@
 
 import UIKit
 
-import UIKit
-
 class PlatformViewController: UIViewController {
 
     private let viewModel: PlatformViewModel

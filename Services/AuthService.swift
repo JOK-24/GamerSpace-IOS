@@ -7,15 +7,6 @@
 
 import Foundation
 
-//
-//  AuthService.swift
-//  GameSpace
-//
-//  Created by DESIGN on 4/12/25.
-//
-
-import Foundation
-
 class AuthService {
 
     static let shared = AuthService()

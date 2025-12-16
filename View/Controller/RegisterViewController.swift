@@ -10,15 +10,15 @@ import UIKit
 class RegisterViewController: UIViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
-        @IBOutlet weak var usernameTextField: UITextField!
-        @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
 
         override func viewDidLoad() {
             super.viewDidLoad()
             title = "Registro"
         }
 
-        @IBAction func registerTapped(_ sender: UIButton) {
+    @IBAction func registerTapped(_ sender: UIButton) {
 
             let email = emailTextField.text ?? ""
             let username = usernameTextField.text ?? ""

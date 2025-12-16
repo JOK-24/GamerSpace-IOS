@@ -73,13 +73,13 @@ class RawgService {
         }.resume()
     }
 
-    // MARK: - Juegos por género
-    func getGamesByGenre(genreId: Int, completion: @escaping ([Game]) -> Void) {
-        let urlString = "\(baseURL)/games?key=\(apiKey)&genres=\(genreId)&page_size=20"
+    // MARK: - Juegos por género (slug)
+    func getGamesByGenre(slug: String, completion: @escaping ([Game]) -> Void) {
+        let urlString = "\(baseURL)/games?key=\(apiKey)&genres=\(slug)&page_size=20"
         guard let url = URL(string: urlString) else { return }
 
         URLSession.shared.dataTask(with: url) { data, _, _ in
-            guard let data = data else { return }
+            guard let data else { return }
 
             do {
                 let result = try JSONDecoder().decode(GameResponse.self, from: data)
@@ -87,8 +87,9 @@ class RawgService {
                     completion(result.results)
                 }
             } catch {
-                print("Error género:", error)
+                print("Error género (slug):", error)
             }
         }.resume()
     }
+
 }

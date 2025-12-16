@@ -120,32 +120,58 @@ import UIKit
             contentStack.addArrangedSubview(collectionView)
         }
         
+        
+        private let genres: [(name: String, slug: String)] = [
+            ("RPG", "role-playing-games-rpg"),
+            ("Acción", "action"),
+            ("Aventura", "adventure"),
+            ("Estrategia", "strategy"),
+            ("Indie", "indie")
+        ]
+        
+        
         private func addGenreSection() {
             let titleLabel = UILabel()
             titleLabel.text = "Por género"
             titleLabel.font = .boldSystemFont(ofSize: 20)
-            
-            let genres = ["RPG", "Acción", "Aventura", "Estrategia", "Indie"]
-            
+
             let genreStack = UIStackView()
             genreStack.axis = .horizontal
             genreStack.spacing = 12
             genreStack.distribution = .fillEqually
-            
-            genres.forEach { genre in
-                let label = UILabel()
-                label.text = genre
-                label.textAlignment = .center
-                label.backgroundColor = .systemGray5
-                label.layer.cornerRadius = 14
-                label.clipsToBounds = true
-                label.heightAnchor.constraint(equalToConstant: 44).isActive = true
-                genreStack.addArrangedSubview(label)
+
+            genres.enumerated().forEach { index, genre in
+                let button = UIButton(type: .system)
+                button.setTitle(genre.name, for: .normal)
+                button.backgroundColor = .systemGray5
+                button.layer.cornerRadius = 14
+                button.tag = index
+                button.heightAnchor.constraint(equalToConstant: 44).isActive = true
+
+                button.addTarget(
+                    self,
+                    action: #selector(genreTapped(_:)),
+                    for: .touchUpInside
+                )
+
+                genreStack.addArrangedSubview(button)
             }
-            
+
             contentStack.addArrangedSubview(titleLabel)
             contentStack.addArrangedSubview(genreStack)
         }
+
+        
+        
+        @objc private func genreTapped(_ sender: UIButton) {
+            let genre = genres[sender.tag]
+            let vc = GenreViewController(
+                genreSlug: genre.slug,
+                title: genre.name
+            )
+            navigationController?.pushViewController(vc, animated: true)
+        }
+
     }
 
     extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate {

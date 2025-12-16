@@ -17,6 +17,8 @@
 		B5C8A8022EF0907900835FEB /* GameGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C8A8012EF0907900835FEB /* GameGridCell.swift */; };
 		B5C8A8072EF0934600835FEB /* platformStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C8A8062EF0934600835FEB /* platformStack.swift */; };
 		B5C8A8092EF0941200835FEB /* tableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C8A8082EF0941200835FEB /* tableView.swift */; };
+		B5CDB85E2EF0EA2F00CA98E5 /* GenreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CDB85D2EF0EA2F00CA98E5 /* GenreViewController.swift */; };
+		B5CDB8622EF0EAE800CA98E5 /* GenreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CDB8612EF0EAE800CA98E5 /* GenreViewModel.swift */; };
 		B5E1FF192EE1E512007ABE73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E1FF182EE1E512007ABE73 /* AppDelegate.swift */; };
 		B5E1FF1B2EE1E512007ABE73 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E1FF1A2EE1E512007ABE73 /* SceneDelegate.swift */; };
 		B5E1FF1D2EE1E512007ABE73 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E1FF1C2EE1E512007ABE73 /* HomeViewController.swift */; };
@@ -44,6 +46,8 @@
 		B5C8A8012EF0907900835FEB /* GameGridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameGridCell.swift; sourceTree = "<group>"; };
 		B5C8A8062EF0934600835FEB /* platformStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = platformStack.swift; sourceTree = "<group>"; };
 		B5C8A8082EF0941200835FEB /* tableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tableView.swift; sourceTree = "<group>"; };
+		B5CDB85D2EF0EA2F00CA98E5 /* GenreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreViewController.swift; sourceTree = "<group>"; };
+		B5CDB8612EF0EAE800CA98E5 /* GenreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreViewModel.swift; sourceTree = "<group>"; };
 		B5E1FF152EE1E512007ABE73 /* GameSpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameSpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5E1FF182EE1E512007ABE73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5E1FF1A2EE1E512007ABE73 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +84,7 @@
 				B5710DAC2EEDDAA2008E8A4C /* HomeViewModel.swift */,
 				B5C8A7F92EF08A7800835FEB /* SearchViewModel.swift */,
 				B5C8A7FF2EF0901400835FEB /* PlatformViewModel.swift */,
+				B5CDB8612EF0EAE800CA98E5 /* GenreViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -104,6 +109,7 @@
 				B5E1FF1C2EE1E512007ABE73 /* HomeViewController.swift */,
 				B5C8A7FB2EF08AAA00835FEB /* SearchViewController.swift */,
 				B5C8A7FD2EF08FFC00835FEB /* PlatformViewController.swift */,
+				B5CDB85D2EF0EA2F00CA98E5 /* GenreViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -251,6 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5E1FF392EE1E79D007ABE73 /* RegisterViewController.swift in Sources */,
+				B5CDB85E2EF0EA2F00CA98E5 /* GenreViewController.swift in Sources */,
 				B5710DAD2EEDDAA2008E8A4C /* HomeViewModel.swift in Sources */,
 				B5E1FF1D2EE1E512007ABE73 /* HomeViewController.swift in Sources */,
 				B5C8A8002EF0901400835FEB /* PlatformViewModel.swift in Sources */,
@@ -268,6 +275,7 @@
 				B5710DAB2EEDDA6D008E8A4C /* LoginViewModel.swift in Sources */,
 				B5C8A7FE2EF08FFC00835FEB /* PlatformViewController.swift in Sources */,
 				B5E1FF352EE1E681007ABE73 /* User.swift in Sources */,
+				B5CDB8622EF0EAE800CA98E5 /* GenreViewModel.swift in Sources */,
 				B5C8A8072EF0934600835FEB /* platformStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
