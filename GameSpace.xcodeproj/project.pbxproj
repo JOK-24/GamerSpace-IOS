@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B1B7B0DC2EF26CE300A5865C /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B7B0DB2EF26CE200A5865C /* TabBarController.swift */; };
+		B1B7B0DE2EF26D1E00A5865C /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B7B0DD2EF26D1E00A5865C /* UserViewController.swift */; };
+		B1B7B0E02EF26E5F00A5865C /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B7B0DF2EF26E5F00A5865C /* SplashViewController.swift */; };
+		B1B7B0E22EF2725800A5865C /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1B7B0E12EF2725800A5865C /* Login.storyboard */; };
 		B5710DAB2EEDDA6D008E8A4C /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5710DAA2EEDDA6D008E8A4C /* LoginViewModel.swift */; };
 		B5710DAD2EEDDAA2008E8A4C /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5710DAC2EEDDAA2008E8A4C /* HomeViewModel.swift */; };
 		B5710DB02EEDDDAC008E8A4C /* GameCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5710DAF2EEDDDAC008E8A4C /* GameCardCell.swift */; };
@@ -31,11 +35,14 @@
 		B5E1FF352EE1E681007ABE73 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E1FF342EE1E681007ABE73 /* User.swift */; };
 		B5E1FF372EE1E78A007ABE73 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E1FF362EE1E78A007ABE73 /* LoginViewController.swift */; };
 		B5E1FF392EE1E79D007ABE73 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E1FF382EE1E79D007ABE73 /* RegisterViewController.swift */; };
-		B5E1FF3B2EE1EB42007ABE73 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5E1FF3A2EE1EB42007ABE73 /* Login.storyboard */; };
 		B5E1FF3D2EE1EBE7007ABE73 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5E1FF3C2EE1EBE7007ABE73 /* Register.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B1B7B0DB2EF26CE200A5865C /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		B1B7B0DD2EF26D1E00A5865C /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		B1B7B0DF2EF26E5F00A5865C /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		B1B7B0E12EF2725800A5865C /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		B5710DAA2EEDDA6D008E8A4C /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		B5710DAC2EEDDAA2008E8A4C /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		B5710DAF2EEDDDAC008E8A4C /* GameCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCardCell.swift; sourceTree = "<group>"; };
@@ -62,7 +69,6 @@
 		B5E1FF342EE1E681007ABE73 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B5E1FF362EE1E78A007ABE73 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B5E1FF382EE1E79D007ABE73 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		B5E1FF3A2EE1EB42007ABE73 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		B5E1FF3C2EE1EBE7007ABE73 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -94,7 +100,7 @@
 			children = (
 				B5C8A8032EF0932200835FEB /* mainStack */,
 				B5E1FF3C2EE1EBE7007ABE73 /* Register.storyboard */,
-				B5E1FF3A2EE1EB42007ABE73 /* Login.storyboard */,
+				B1B7B0E12EF2725800A5865C /* Login.storyboard */,
 				B5710DA92EEDD735008E8A4C /* Controller */,
 			);
 			path = View;
@@ -110,6 +116,9 @@
 				B5C8A7FB2EF08AAA00835FEB /* SearchViewController.swift */,
 				B5C8A7FD2EF08FFC00835FEB /* PlatformViewController.swift */,
 				B5CDB85D2EF0EA2F00CA98E5 /* GenreViewController.swift */,
+				B1B7B0DF2EF26E5F00A5865C /* SplashViewController.swift */,
+				B1B7B0DB2EF26CE200A5865C /* TabBarController.swift */,
+				B1B7B0DD2EF26D1E00A5865C /* UserViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -241,10 +250,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5E1FF3B2EE1EB42007ABE73 /* Login.storyboard in Resources */,
 				B5E1FF252EE1E514007ABE73 /* LaunchScreen.storyboard in Resources */,
 				B5E1FF222EE1E514007ABE73 /* Assets.xcassets in Resources */,
 				B5E1FF202EE1E512007ABE73 /* Main.storyboard in Resources */,
+				B1B7B0E22EF2725800A5865C /* Login.storyboard in Resources */,
 				B5E1FF3D2EE1EBE7007ABE73 /* Register.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,12 +278,15 @@
 				B5C8A7FC2EF08AAA00835FEB /* SearchViewController.swift in Sources */,
 				B5E1FF1B2EE1E512007ABE73 /* SceneDelegate.swift in Sources */,
 				B5E1FF2F2EE1E5DB007ABE73 /* AuthService.swift in Sources */,
+				B1B7B0DC2EF26CE300A5865C /* TabBarController.swift in Sources */,
 				B5C8A8022EF0907900835FEB /* GameGridCell.swift in Sources */,
+				B1B7B0E02EF26E5F00A5865C /* SplashViewController.swift in Sources */,
 				B5710DB02EEDDDAC008E8A4C /* GameCardCell.swift in Sources */,
 				B5C8A8092EF0941200835FEB /* tableView.swift in Sources */,
 				B5710DAB2EEDDA6D008E8A4C /* LoginViewModel.swift in Sources */,
 				B5C8A7FE2EF08FFC00835FEB /* PlatformViewController.swift in Sources */,
 				B5E1FF352EE1E681007ABE73 /* User.swift in Sources */,
+				B1B7B0DE2EF26D1E00A5865C /* UserViewController.swift in Sources */,
 				B5CDB8622EF0EAE800CA98E5 /* GenreViewModel.swift in Sources */,
 				B5C8A8072EF0934600835FEB /* platformStack.swift in Sources */,
 			);

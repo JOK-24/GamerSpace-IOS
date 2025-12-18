@@ -14,8 +14,23 @@ class LoginViewModel {
         password: String,
         completion: @escaping (UserResponseDTO?, String?) -> Void
     ) {
-        AuthService.shared.login(email: email, password: password) { user, error in
-            completion(user, error)
-        }
-    }
+        // Validación básica
+           guard !email.isEmpty, !password.isEmpty else {
+               completion(nil, "Por favor completa todos los campos")
+               return
+           }
+           // Validación simple de email
+           guard isValidEmail(email) else {
+               completion(nil, "El email no tiene un formato válido")
+               return
+           }
+           // Llamada al servicio
+           AuthService.shared.login(email: email, password: password) { user, error in
+               completion(user, error)
+           }
+       }
+       // MARK: - Helpers
+       private func isValidEmail(_ email: String) -> Bool {
+           return email.contains("@") && email.contains(".")
+       }
 }

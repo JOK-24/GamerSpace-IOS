@@ -7,7 +7,6 @@
 
 import UIKit
 
-    
     enum HomeSection: Int, CaseIterable {
         case trending, newReleases, upcoming
         
@@ -66,7 +65,6 @@ import UIKit
         private func setupLayout() {
             scrollView.translatesAutoresizingMaskIntoConstraints = false
             contentStack.translatesAutoresizingMaskIntoConstraints = false
-            
             contentStack.axis = .vertical
             contentStack.spacing = 24
             
@@ -120,7 +118,6 @@ import UIKit
             contentStack.addArrangedSubview(collectionView)
         }
         
-        
         private let genres: [(name: String, slug: String)] = [
             ("RPG", "role-playing-games-rpg"),
             ("Acción", "action"),
@@ -128,7 +125,6 @@ import UIKit
             ("Estrategia", "strategy"),
             ("Indie", "indie")
         ]
-        
         
         private func addGenreSection() {
             let titleLabel = UILabel()
@@ -160,8 +156,6 @@ import UIKit
             contentStack.addArrangedSubview(titleLabel)
             contentStack.addArrangedSubview(genreStack)
         }
-
-        
         
         @objc private func genreTapped(_ sender: UIButton) {
             let genre = genres[sender.tag]
