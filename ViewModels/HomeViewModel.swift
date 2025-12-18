@@ -9,7 +9,7 @@ import Foundation
 
 class HomeViewModel {
 
-    private let apiKey = "5616cbd1b2e147b49763301d930f4d22"
+    private let apiKey = ""
        
        var trendingGames: [Game] = []
        var newGames: [Game] = []
@@ -59,4 +59,23 @@ class HomeViewModel {
                }
            }.resume()
        }
+    //UserDefault
+    func shouldShowWelcome() -> Bool {
+            return !UserDefaults.standard.bool(
+                forKey: AppDefaults.hasSeenWelcome
+            )
+        }
+
+    func markWelcomeAsSeen() {
+            UserDefaults.standard.set(
+                true,
+                forKey: AppDefaults.hasSeenWelcome
+            )
+        }
+    func getUsername() -> String {
+        return UserDefaults.standard.string(
+            forKey: AppDefaults.username
+        ) ?? ""
+    }
+
    }

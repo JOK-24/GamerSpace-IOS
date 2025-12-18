@@ -7,7 +7,6 @@
 
 import UIKit
 
-    
     enum HomeSection: Int, CaseIterable {
         case trending, newReleases, upcoming
         
@@ -23,6 +22,7 @@ import UIKit
     class HomeViewController: UIViewController {
         
         var viewModel: HomeViewModel!
+
         
         private let scrollView = UIScrollView()
         private let contentStack = UIStackView()
@@ -40,6 +40,44 @@ import UIKit
                 self?.collections.forEach { $0.reloadData() }
             }
         }
+        
+    //
+        override func viewDidAppear(_ animated: Bool) {
+            super.viewDidAppear(animated)
+            showWelcomeIfNeeded()
+        }
+    //
+        private func showWelcomeIfNeeded() {
+            if viewModel.shouldShowWelcome() {
+                showWelcomeAlert()
+            }
+        }
+
+    //
+        private func showWelcomeAlert() {
+            let username = viewModel.getUsername()
+            
+            let alert = UIAlertController(
+                title: "Bienvenido a GameSpace,\(username) 🎮",
+                message: """
+                Aquí podrás descubrir juegos populares, nuevos lanzamientos
+                y explorar por géneros.
+
+                Usa el buscador para encontrar tus juegos favoritos.
+                """,
+                preferredStyle: .alert
+            )
+
+            let acceptAction = UIAlertAction(title: "Entendido", style: .default) { [weak self] _ in
+                self?.viewModel.markWelcomeAsSeen()
+            }
+
+            alert.addAction(acceptAction)
+            present(alert, animated: true)
+        }
+
+
+    //
         
         private func setupNavigationBar() {
             let logo = UIImageView(image: UIImage(named: "logo"))//falta img
@@ -66,7 +104,6 @@ import UIKit
         private func setupLayout() {
             scrollView.translatesAutoresizingMaskIntoConstraints = false
             contentStack.translatesAutoresizingMaskIntoConstraints = false
-            
             contentStack.axis = .vertical
             contentStack.spacing = 24
             
@@ -120,7 +157,6 @@ import UIKit
             contentStack.addArrangedSubview(collectionView)
         }
         
-        
         private let genres: [(name: String, slug: String)] = [
             ("RPG", "role-playing-games-rpg"),
             ("Acción", "action"),
@@ -128,7 +164,6 @@ import UIKit
             ("Estrategia", "strategy"),
             ("Indie", "indie")
         ]
-        
         
         private func addGenreSection() {
             let titleLabel = UILabel()
@@ -160,8 +195,6 @@ import UIKit
             contentStack.addArrangedSubview(titleLabel)
             contentStack.addArrangedSubview(genreStack)
         }
-
-        
         
         @objc private func genreTapped(_ sender: UIButton) {
             let genre = genres[sender.tag]

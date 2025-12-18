@@ -12,7 +12,7 @@ class AuthService {
     static let shared = AuthService()
     private init() {}
 
-    // URL del BACKEND (Railway)
+    // URL del BACKEND (Render)
     private let baseURL = "https://gamerapp-backend.onrender.com/auth"
 
     // MARK: - LOGIN
@@ -58,6 +58,17 @@ class AuthService {
 
         }.resume()
     }
+    
+    // MARK: - WARM UP SERVER (Render free)
+    func warmUpServer() {
+        guard let url = URL(string: "\(baseURL)/health") else { return }
+
+        // Esta request solo sirve para "despertar" el servidor
+        URLSession.shared.dataTask(with: url) { _, _, _ in
+            // Ignoramos la respuesta, solo la request para mantener el servidor activo
+        }.resume()
+    }
+
 
     // MARK: - REGISTER
     func register(email: String, username: String, password: String, completion: @escaping (UserResponseDTO?, String?) -> Void) {
