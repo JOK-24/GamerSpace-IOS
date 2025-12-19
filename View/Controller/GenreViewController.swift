@@ -33,7 +33,7 @@ class GenreViewController: UIViewController {
         override func viewDidLoad() {
             super.viewDidLoad()
             view.backgroundColor = .systemBackground
-
+            collectionView.delegate = self
             collectionView.dataSource = self
             collectionView.register(GameGridCell.self, forCellWithReuseIdentifier: GameGridCell.identifier)
 
@@ -75,3 +75,16 @@ extension GenreViewController: UICollectionViewDataSource {
     }
 }
 
+extension GenreViewController: UICollectionViewDelegate {
+
+    func collectionView(_ collectionView: UICollectionView,
+                        didSelectItemAt indexPath: IndexPath) {
+
+        let game = viewModel.game(at: indexPath.item)
+
+        let detailVM = GameDetailViewModel(gameId: game.id)
+        let detailVC = GameDetailViewController(viewModel: detailVM)
+
+        navigationController?.pushViewController(detailVC, animated: true)
+    }
+}

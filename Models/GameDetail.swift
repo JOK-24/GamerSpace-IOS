@@ -50,3 +50,7 @@ struct Trailer: Codable {
 struct TrailerData: Codable {
     let max: String
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 611f1cefdf5cad74c1e555705fbd25e7d4a2a845

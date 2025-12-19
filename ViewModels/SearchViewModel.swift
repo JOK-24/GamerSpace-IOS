@@ -54,6 +54,7 @@ class SearchViewModel {
         guard index < games.count else { return "" }
         return games[index].name
     }
+<<<<<<< HEAD
 
     // MARK: - Genre helpers (NUEVO)
     func numberOfGenres() -> Int {
@@ -66,4 +67,10 @@ class SearchViewModel {
     func game(at index: Int) -> Game {
               games[index]
           }
+=======
+    
+    func game(at index: Int) -> Game {
+            games[index]
+        }
+>>>>>>> 611f1cefdf5cad74c1e555705fbd25e7d4a2a845
 }

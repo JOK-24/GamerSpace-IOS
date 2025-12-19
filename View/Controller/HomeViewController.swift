@@ -188,6 +188,7 @@ import UIKit
         
         func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
+<<<<<<< HEAD
                             guard let section = HomeSection(rawValue: collectionView.tag) else { return }
 
                             let game: Game
@@ -207,3 +208,24 @@ import UIKit
                             navigationController?.pushViewController(detailVC, animated: true)
                         }
             }
+=======
+                    guard let section = HomeSection(rawValue: collectionView.tag) else { return }
+
+                    let game: Game
+                    switch section {
+                    case .trending:
+                        game = viewModel.trendingGames[indexPath.item]
+                    case .newReleases:
+                        game = viewModel.newGames[indexPath.item]
+                    case .upcoming:
+                        game = viewModel.upcomingGames[indexPath.item]
+                    }
+
+                    let detailViewModel = GameDetailViewModel(gameId: game.id)
+
+                    let detailVC = GameDetailViewController(viewModel: detailViewModel)
+
+                    navigationController?.pushViewController(detailVC, animated: true)
+                }
+    }
+>>>>>>> 611f1cefdf5cad74c1e555705fbd25e7d4a2a845
