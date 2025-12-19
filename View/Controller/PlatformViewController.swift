@@ -58,11 +58,6 @@ extension PlatformViewController: UICollectionViewDataSource {
         return cell
     }
 }
-
-<<<<<<< HEAD
-=======
-
->>>>>>> 611f1cefdf5cad74c1e555705fbd25e7d4a2a845
 extension PlatformViewController: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView,
@@ -76,7 +71,3 @@ extension PlatformViewController: UICollectionViewDelegate {
         navigationController?.pushViewController(detailVC, animated: true)
     }
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> 611f1cefdf5cad74c1e555705fbd25e7d4a2a845

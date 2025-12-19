@@ -40,8 +40,4 @@ class GameDescriptionCell: UITableViewCell {
         descriptionLabel.text = viewModel.descriptionText
     }
 }
-<<<<<<< HEAD
-=======
 
-
->>>>>>> 611f1cefdf5cad74c1e555705fbd25e7d4a2a845
