@@ -38,6 +38,7 @@ class PlatformViewController: UIViewController {
 
     private func setupCollection() {
         collectionView.dataSource = self
+        collectionView.delegate = self
         collectionView.register(GameGridCell.self, forCellWithReuseIdentifier: GameGridCell.identifier)
         view.addSubview(collectionView)
         collectionView.frame = view.bounds
@@ -58,3 +59,16 @@ extension PlatformViewController: UICollectionViewDataSource {
     }
 }
 
+extension PlatformViewController: UICollectionViewDelegate {
+
+    func collectionView(_ collectionView: UICollectionView,
+                        didSelectItemAt indexPath: IndexPath) {
+
+        let game = viewModel.games[indexPath.item]
+
+        let detailVM = GameDetailViewModel(gameId: game.id)
+        let detailVC = GameDetailViewController(viewModel: detailVM)
+
+        navigationController?.pushViewController(detailVC, animated: true)
+    }
+}

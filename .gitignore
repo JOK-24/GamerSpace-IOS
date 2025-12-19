@@ -1,0 +1,17 @@
+# Xcode
+# ---------
+build/
+DerivedData/
+*.hmap
+*.ipa
+*.xcuserstate
+
+# Ignorar archivos personales de usuario (¡Muy importante!)
+# Esto eliminará las carpetas 'silviaferrerrorodriguez' de tu lista
+xcuserdata/
+*.xcuserdatad/
+*.xccheckout
+
+# Otros
+# ---------
+.DS_Store

@@ -24,7 +24,7 @@ class LoginViewController: UIViewController {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        // Aquí puedes usar tu logo: imageView.image = UIImage(named: "logo")
+        //imageView.image = UIImage(named: "gamepad-line")
         return imageView
     }()
     
@@ -73,7 +73,7 @@ class LoginViewController: UIViewController {
         gradientLayer.frame = view.bounds
         view.layer.insertSublayer(gradientLayer, at: 0)
         
-        // Agregar logo y título si no usas Storyboard para estos elementos
+        // Agregar logo y título
         view.addSubview(logoImageView)
         view.addSubview(titleLabel)
         view.addSubview(subtitleLabel)
@@ -225,39 +225,41 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginTapped(_ sender: UIButton) {
         // Animación (SIN CAMBIOS)
-        UIView.animate(withDuration: 0.1, animations: {
-            sender.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
-        }) { _ in
-            UIView.animate(withDuration: 0.1) {
-                sender.transform = .identity
-            }
-        }
-        
-        let email = emailTextField.text ?? ""
-        let password = passwordTextField.text ?? ""
-        
-        viewModel.login(email: email, password: password) { user, error in
-            DispatchQueue.main.async {
-                
-                if let user = user {
-                    print("Login correcto → \(user.username)")
-                    
-                    // DESPIERTA EL BACKEND
-                    AuthService.shared.warmUpServer()
-                    
-                    let tabBar = TabBarController()
-                    guard let sceneDelegate = self.view.window?.windowScene?.delegate as? SceneDelegate else {
-                        return
-                    }
-                    
-                    sceneDelegate.window?.rootViewController = tabBar
-                    sceneDelegate.window?.makeKeyAndVisible()
-                    
-                } else if let error = error {
-                    self.showAlert(title: "Error", message: error)
+            UIView.animate(withDuration: 0.1, animations: {
+                sender.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
+            }) { _ in
+                UIView.animate(withDuration: 0.1) {
+                    sender.transform = .identity
                 }
             }
-        }
+            
+            let email = emailTextField.text ?? ""
+            let password = passwordTextField.text ?? ""
+            
+            viewModel.login(email: email, password: password) { user, error in
+                DispatchQueue.main.async {
+                    if let user = user {
+                        print("Login correcto → \(user.username)")
+                        
+                        // Guardar el usuario en UserDefaults
+                        UserDefaults.standard.set(user.username, forKey: "username")
+                        UserDefaults.standard.set(user.email, forKey: "email")
+                        
+                        // DESPIERTA EL BACKEND
+                        AuthService.shared.warmUpServer()
+                        
+                        let tabBar = TabBarController()
+                        guard let sceneDelegate = self.view.window?.windowScene?.delegate as? SceneDelegate else {
+                            return
+                        }
+                        
+                        sceneDelegate.window?.rootViewController = tabBar
+                        sceneDelegate.window?.makeKeyAndVisible()
+                    } else if let error = error {
+                        self.showAlert(title: "Error", message: error)
+                    }
+                }
+            }
     }
     
     @IBAction func goToRegister(_ sender: UIButton) {

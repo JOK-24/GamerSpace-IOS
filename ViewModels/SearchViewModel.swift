@@ -9,8 +9,19 @@ import Foundation
 
 class SearchViewModel {
 
+    // MARK: - Games (ya lo tenías)
     private var games: [Game] = []
 
+    // MARK: - Genres (NUEVO)
+    let genres: [GenreFilter] = [
+        GenreFilter(name: "RPG", slug: "role-playing-games-rpg"),
+        GenreFilter(name: "Acción", slug: "action"),
+        GenreFilter(name: "Aventura", slug: "adventure"),
+        GenreFilter(name: "Estrategia", slug: "strategy"),
+        GenreFilter(name: "Indie", slug: "indie")
+    ]
+
+    // MARK: - Games logic
     func loadPopular(completion: @escaping () -> Void) {
         RawgService.shared.getPopularGames { games in
             self.games = Array(games.prefix(5))
@@ -34,6 +45,7 @@ class SearchViewModel {
         }
     }
 
+    // MARK: - TableView helpers
     func numberOfRows() -> Int {
         games.count
     }
@@ -42,4 +54,16 @@ class SearchViewModel {
         guard index < games.count else { return "" }
         return games[index].name
     }
+
+    // MARK: - Genre helpers (NUEVO)
+    func numberOfGenres() -> Int {
+        genres.count
+    }
+
+    func genre(at index: Int) -> GenreFilter {
+        genres[index]
+    }
+    func game(at index: Int) -> Game {
+              games[index]
+          }
 }
