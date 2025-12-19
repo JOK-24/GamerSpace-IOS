@@ -42,4 +42,8 @@ class SearchViewModel {
         guard index < games.count else { return "" }
         return games[index].name
     }
+    
+    func game(at index: Int) -> Game {
+            games[index]
+        }
 }

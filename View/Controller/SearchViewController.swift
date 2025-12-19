@@ -57,6 +57,7 @@ class SearchViewController: UIViewController {
     // MARK: - TableView
     private func setupTableView() {
         tableView.dataSource = self
+        tableView.delegate = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.rowHeight = 44
         tableView.heightAnchor.constraint(equalToConstant: 250).isActive = true
@@ -132,5 +133,18 @@ extension SearchViewController: UITableViewDataSource {
         cell.textLabel?.text = viewModel.title(at: indexPath.row)
         cell.selectionStyle = .none
         return cell
+    }
+}
+
+extension SearchViewController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        let game = viewModel.game(at: indexPath.row)
+
+        let detailVM = GameDetailViewModel(gameId: game.id)
+        let detailVC = GameDetailViewController(viewModel: detailVM)
+
+        navigationController?.pushViewController(detailVC, animated: true)
     }
 }
