@@ -29,9 +29,13 @@ class GameCardCell: UICollectionViewCell {
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 12
         
-        nameLabel.font = .boldSystemFont(ofSize: 14)
+        // Configuración del label
+        nameLabel.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
         nameLabel.numberOfLines = 2
         nameLabel.textAlignment = .center
+        nameLabel.textColor = .white
+        nameLabel.shadowColor = UIColor.black.withAlphaComponent(0.8)
+        nameLabel.shadowOffset = CGSize(width: 0, height: 1)
         
         let stack = UIStackView(arrangedSubviews: [imageView, nameLabel])
         stack.axis = .vertical
