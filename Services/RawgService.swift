@@ -12,7 +12,7 @@ class RawgService {
     static let shared = RawgService()
     private init() {}
     
-    private let apiKey = ""
+    private let apiKey = "5616cbd1b2e147b49763301d930f4d22"
     private let baseURL = "https://api.rawg.io/api"
     
     // MARK: - Populares
@@ -114,24 +114,3 @@ extension RawgService {
     }
 }
 
-extension RawgService {
-
-    // Detalle completo del juego
-    func getGameDetail(id: Int, completion: @escaping (GameDetail?) -> Void) {
-        let urlString = "\(baseURL)/games/\(id)?key=\(apiKey)"
-        guard let url = URL(string: urlString) else { return }
-
-        URLSession.shared.dataTask(with: url) { data, _, _ in
-            guard let data = data else { return }
-
-            do {
-                let detail = try JSONDecoder().decode(GameDetail.self, from: data)
-                DispatchQueue.main.async {
-                    completion(detail)
-                }
-            } catch {
-                print("Error decodificando detalle:", error)
-            }
-        }.resume()
-    }
-}

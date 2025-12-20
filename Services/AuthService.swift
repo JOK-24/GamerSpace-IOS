@@ -13,8 +13,8 @@ class AuthService {
     private init() {}
 
     // URL del BACKEND (Render)
-    private let baseURL = "https://gamerapp-backend.onrender.com/auth"
-    //private let baseURL = "https://gamerspace-backend-production.up.railway.app/auth"
+   // private let baseURL = "https://gamerapp-backend.onrender.com/auth"
+    private let baseURL = "https://gamerspace-backend-production.up.railway.app/auth"
 
     // MARK: - LOGIN
     func login(email: String, password: String, completion: @escaping (UserResponseDTO?, String?) -> Void) {
