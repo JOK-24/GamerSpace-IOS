@@ -10,5 +10,7 @@ import Foundation
 enum AppDefaults {
     static let hasSeenWelcome = "hasSeenWelcome"
     static let username = "username"
+    static let userId = "userId"
+    static let email = "email"
 }
 

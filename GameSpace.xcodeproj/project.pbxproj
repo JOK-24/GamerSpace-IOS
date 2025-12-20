@@ -47,6 +47,8 @@
 		B5E1FF392EE1E79D007ABE73 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E1FF382EE1E79D007ABE73 /* RegisterViewController.swift */; };
 		B5E1FF3B2EE1EB42007ABE73 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5E1FF3A2EE1EB42007ABE73 /* Login.storyboard */; };
 		B5E1FF3D2EE1EBE7007ABE73 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5E1FF3C2EE1EBE7007ABE73 /* Register.storyboard */; };
+		B5EDE16F2EF709AD002AC90D /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EDE16E2EF709AD002AC90D /* UserService.swift */; };
+		B5EDE1712EF71021002AC90D /* ProfileOptionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EDE1702EF71021002AC90D /* ProfileOptionButton.swift */; };
 		B7329EB22EF7014200ABE4EE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E1FF1C2EE1E512007ABE73 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -94,6 +96,8 @@
 		B5E1FF382EE1E79D007ABE73 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		B5E1FF3A2EE1EB42007ABE73 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		B5E1FF3C2EE1EBE7007ABE73 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
+		B5EDE16E2EF709AD002AC90D /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		B5EDE1702EF71021002AC90D /* ProfileOptionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOptionButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +182,7 @@
 			children = (
 				B5C8A8062EF0934600835FEB /* platformStack.swift */,
 				B5C8A8082EF0941200835FEB /* tableView.swift */,
+				B5EDE1702EF71021002AC90D /* ProfileOptionButton.swift */,
 			);
 			path = mainStack;
 			sourceTree = "<group>";
@@ -232,6 +237,7 @@
 			children = (
 				B5E1FF2E2EE1E5DB007ABE73 /* AuthService.swift */,
 				B5E1FF302EE1E632007ABE73 /* RawgService.swift */,
+				B5EDE16E2EF709AD002AC90D /* UserService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -323,6 +329,7 @@
 				B57EC4E32EF1DC090077A7F2 /* WelcomeViewController.swift in Sources */,
 				B11CA9322EF13DB100C5F45E /* TabBarController.swift in Sources */,
 				B557DC322EF4F33F007BA2B6 /* GameDetailViewController.swift in Sources */,
+				B5EDE16F2EF709AD002AC90D /* UserService.swift in Sources */,
 				B5E1FF332EE1E64E007ABE73 /* Game.swift in Sources */,
 				B5E1FF312EE1E632007ABE73 /* RawgService.swift in Sources */,
 				B5C8A7FA2EF08A7800835FEB /* SearchViewModel.swift in Sources */,
@@ -340,6 +347,7 @@
 				B5710DB02EEDDDAC008E8A4C /* GameCardCell.swift in Sources */,
 				B5C8A8092EF0941200835FEB /* tableView.swift in Sources */,
 				B5710DAB2EEDDA6D008E8A4C /* LoginViewModel.swift in Sources */,
+				B5EDE1712EF71021002AC90D /* ProfileOptionButton.swift in Sources */,
 				B5C8A7FE2EF08FFC00835FEB /* PlatformViewController.swift in Sources */,
 				B5E1FF352EE1E681007ABE73 /* User.swift in Sources */,
 				B5CDB8622EF0EAE800CA98E5 /* GenreViewModel.swift in Sources */,
