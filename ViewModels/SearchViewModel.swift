@@ -66,9 +66,4 @@ class SearchViewModel {
     func game(at index: Int) -> Game {
               games[index]
           }
-
-    
-    func game(at index: Int) -> Game {
-            games[index]
-        }
 }

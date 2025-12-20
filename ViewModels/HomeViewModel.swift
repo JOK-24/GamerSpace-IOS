@@ -9,7 +9,7 @@ import Foundation
 
 class HomeViewModel {
 
-    private let apiKey = ""
+    private let apiKey = "5616cbd1b2e147b49763301d930f4d22"
        
        var trendingGames: [Game] = []
        var newGames: [Game] = []
