@@ -18,16 +18,57 @@ class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
+        setupUI()
         setupSearchBar()
         setupLayout()
         loadInitialData()
+    }
+    
+    
+    private func setupUI() {
+        // Fondo con gradiente
+        view.backgroundColor = UIColor.darkBlue
+        
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [
+            UIColor.darkBlue.cgColor,
+            UIColor.indigo.withAlphaComponent(0.3).cgColor,
+            UIColor.darkBlue.cgColor
+        ]
+        gradientLayer.locations = [0.0, 0.5, 1.0]
+        gradientLayer.frame = view.bounds
+        view.layer.insertSublayer(gradientLayer, at: 0)
+        
+        // Configurar navigation bar
+        setupNavigationBar()
+    }
+    
+    private func setupNavigationBar() {
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = UIColor.darkBlue
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        navigationController?.navigationBar.tintColor = UIColor.purple
     }
     
     // MARK: - SearchBar
     private func setupSearchBar() {
         searchBar.placeholder = "Buscar juegos"
         searchBar.delegate = self
+        searchBar.searchBarStyle = .minimal
+        
+        // Estilo del search bar
+        searchBar.searchTextField.backgroundColor = UIColor.white.withAlphaComponent(0.1)
+        searchBar.searchTextField.textColor = .white
+        searchBar.searchTextField.leftView?.tintColor = UIColor.purple
+        searchBar.searchTextField.attributedPlaceholder = NSAttributedString(
+            string: "Buscar juegos",
+            attributes: [.foregroundColor: UIColor.white.withAlphaComponent(0.5)]
+        )
+        
         navigationItem.titleView = searchBar
     }
     
@@ -61,8 +102,12 @@ class SearchViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        tableView.rowHeight = 44
-        tableView.heightAnchor.constraint(equalToConstant: 250).isActive = true
+        tableView.rowHeight = 60
+        tableView.backgroundColor = .clear
+        tableView.separatorColor = UIColor.white.withAlphaComponent(0.1)
+        tableView.heightAnchor.constraint(equalToConstant: 300).isActive = true
+        tableView.layer.cornerRadius = 12
+        tableView.clipsToBounds = true
     }
     
     // MARK: - Platform Filters
@@ -80,14 +125,24 @@ class SearchViewController: UIViewController {
         platformStack.distribution = .fillEqually
         
         platforms.forEach { item in
-            let button = UIButton(type: .system)
-            button.setTitle(item.0, for: .normal)
+            var config = UIButton.Configuration.filled()
+            config.title = item.0
+            config.baseBackgroundColor = UIColor.purple
+            config.baseForegroundColor = .white
+            config.contentInsets = NSDirectionalEdgeInsets(top: 12, leading: 20, bottom: 12, trailing: 20)
+            config.cornerStyle = .small
+            
+            let button = UIButton(configuration: config)
             button.tag = item.1
-            button.backgroundColor = .systemGray5
-            button.layer.cornerRadius = 14
-            button.heightAnchor.constraint(equalToConstant: 44).isActive = true
             button.addTarget(self, action: #selector(platformTapped(_:)), for: .touchUpInside)
             platformStack.addArrangedSubview(button)
+            
+            
+            
+            /*button.layer.cornerRadius = 14
+            button.heightAnchor.constraint(equalToConstant: 44).isActive = true
+            button.addTarget(self, action: #selector(platformTapped(_:)), for: .touchUpInside)
+            platformStack.addArrangedSubview(button)*/
         }
     }
     
@@ -103,7 +158,8 @@ class SearchViewController: UIViewController {
 
             let button = UIButton(type: .system)
             button.setTitle(genre.name, for: .normal)
-            button.backgroundColor = .systemGray5
+            button.backgroundColor = UIColor.white.withAlphaComponent(0.1)
+            button.tintColor = .white
             button.layer.cornerRadius = 14
             button.tag = index
             button.heightAnchor.constraint(equalToConstant: 44).isActive = true
