@@ -33,6 +33,7 @@ import UIKit
             view.backgroundColor = .systemBackground
             viewModel = HomeViewModel()
             setupNavigationBar()
+            setupUI()
             setupLayout()
             setupSections()
             
@@ -46,6 +47,26 @@ import UIKit
             super.viewDidAppear(animated)
             showWelcomeIfNeeded()
         }
+        
+        //
+        
+        // MARK: - UI Setup
+            private func setupUI() {
+                // Fondo con gradiente
+                view.backgroundColor = UIColor.darkBlue
+                
+                let gradientLayer = CAGradientLayer()
+                gradientLayer.colors = [
+                    UIColor.darkBlue.cgColor,
+                    UIColor.indigo.withAlphaComponent(0.3).cgColor,
+                    UIColor.darkBlue.cgColor
+                ]
+                gradientLayer.locations = [0.0, 0.5, 1.0]
+                gradientLayer.frame = view.bounds
+                view.layer.insertSublayer(gradientLayer, at: 0)
+            }
+        
+        
     //
         private func showWelcomeIfNeeded() {
             if viewModel.shouldShowWelcome() {
@@ -80,21 +101,40 @@ import UIKit
     //
         
         private func setupNavigationBar() {
-            let logo = UIImageView(image: UIImage(named: "gamepad-line"))//falta img
+            
+            // Configurar apariencia de la navigation bar
+            let appearance = UINavigationBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            appearance.backgroundColor = UIColor.darkBlue
+            appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+            appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+            
+            navigationController?.navigationBar.standardAppearance = appearance
+            navigationController?.navigationBar.scrollEdgeAppearance = appearance
+            navigationController?.navigationBar.compactAppearance = appearance
+            
+            // Logo
+            let logo = UIImageView(image: UIImage(named: "gamepad-line"))
             logo.contentMode = .scaleAspectFit
+            logo.tintColor = UIColor.purple
             logo.frame = CGRect(x: 0, y: 0, width: 36, height: 36)
             navigationItem.leftBarButtonItem = UIBarButtonItem(customView: logo)
             
-           
-            let searchButton = UIButton(type: .system)
-                searchButton.setTitle("Buscar juegos", for: .normal)
-                searchButton.tintColor = .white
-                searchButton.backgroundColor = .indigo
-                searchButton.layer.cornerRadius = 10
-                searchButton.frame = CGRect(x: 0, y: 0, width: 200, height: 36)
-                searchButton.addTarget(self, action: #selector(openSearch), for: .touchUpInside)
-
-                navigationItem.rightBarButtonItem = UIBarButtonItem(customView: searchButton)
+            // Botón de búsqueda con estilo moderno
+            var config = UIButton.Configuration.filled()
+            config.title = "Buscar juegos"
+            config.image = UIImage(systemName: "magnifyingglass")
+            config.imagePadding = 8
+            config.baseBackgroundColor = UIColor.purple
+            config.baseForegroundColor = .white
+            config.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16)
+            config.cornerStyle = .medium
+            
+            let searchButton = UIButton(configuration: config)
+            searchButton.frame = CGRect(x: 0, y: 0, width: 160, height: 36)
+            searchButton.addTarget(self, action: #selector(openSearch), for: .touchUpInside)
+            
+            navigationItem.rightBarButtonItem = UIBarButtonItem(customView: searchButton)
         }
         
         @objc private func openSearch() {
@@ -120,7 +160,7 @@ import UIKit
                 contentStack.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 16),
                 contentStack.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 16),
                 contentStack.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -16),
-                contentStack.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+                contentStack.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -16),
                 contentStack.widthAnchor.constraint(equalTo: scrollView.widthAnchor, constant: -32)
             ])
         }
@@ -132,9 +172,24 @@ import UIKit
         }
         
         private func addGameSection(title: String, section: HomeSection) {
+            // Container para título
+            let headerContainer = UIView()
+            headerContainer.translatesAutoresizingMaskIntoConstraints = false
+            
             let titleLabel = UILabel()
             titleLabel.text = title
-            titleLabel.font = .boldSystemFont(ofSize: 20)
+            titleLabel.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+            titleLabel.textColor = .white
+            titleLabel.translatesAutoresizingMaskIntoConstraints = false
+            
+            headerContainer.addSubview(titleLabel)
+        
+            
+            NSLayoutConstraint.activate([
+                titleLabel.leadingAnchor.constraint(equalTo: headerContainer.leadingAnchor),
+                titleLabel.centerYAnchor.constraint(equalTo: headerContainer.centerYAnchor),
+                
+            ])
             
             let layout = UICollectionViewFlowLayout()
             layout.scrollDirection = .horizontal
@@ -153,9 +208,10 @@ import UIKit
             
             collections.append(collectionView)
             
-            contentStack.addArrangedSubview(titleLabel)
+            contentStack.addArrangedSubview(headerContainer)
             contentStack.addArrangedSubview(collectionView)
         }
+
         
         
 
